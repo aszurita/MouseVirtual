@@ -1,0 +1,44 @@
+# Ignorar archivos y directorios del entorno virtual
+venv/
+env/
+.virtualenv/
+.venv/
+
+# Ignorar archivos de entorno virtuales de Python específicos
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignorar archivos y carpetas específicos del editor y sistema
+.DS_Store
+*.swp
+*~
+
+# Ignorar archivos de configuración del entorno virtual global
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignorar archivos temporales de Python
+*.tmp
+*.log
+
+# Ignorar archivos de compilación
+build/
+dist/
+
+# Ignorar archivos de cobertura
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+.pytest_cache/
+
+# Ignorar archivos relacionados con Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Ignorar archivos de configuraciones del sistema operativo
+Thumbs.db
+Desktop.ini
+
