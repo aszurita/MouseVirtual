@@ -13,7 +13,11 @@ class detectormanos():
 
         # Creamos los objetos que detectarán las manos y las dibujarán
         self.mpmanos = mp.solutions.hands
-        self.manos = self.mpmanos.Hands(self.mode, self.maxManos, self.Confdeteccion, self.Confsegui)
+        self.manos = self.mpmanos.Hands(
+            static_image_mode=self.mode,
+            max_num_hands=self.maxManos,
+            min_detection_confidence=self.Confdeteccion,
+            min_tracking_confidence=self.Confsegui)
         self.dibujo = mp.solutions.drawing_utils
         self.tip = [4, 8, 12, 16, 20]  # Lista de índices de las puntas de los dedos
 

@@ -35,13 +35,14 @@ while True:
 
         # ----------------- Comprobar que dedos estan arriba --------------------------------
         dedos = detector.dedosarriba()  # Contamos con 5 posiciones nos indica si levanta cualquier dedo
-        cv2.rectangle(frame, (cuadro, cuadro), (anchocam - cuadro, altocam - cuadro), (0, 0, 0), 2)  # Generamos cuadro
+        cv2.rectangle(frame, (0, 0), (anchocam, altocam), (0, 0, 0), 2)  # Ajustar cuadro para cubrir todo
+
 
         # -----------------Modo movimiento: solo dedo indice-------------------------------------
         if dedos[1] == 1 and dedos[2] == 0:  # Si el indice esta arriba pero el corazon esta abajo
             # -----------------> Modo movimiento conversion a las pixeles de mi pantalla-------------
-            x3 = np.interp(x1, (cuadro, anchocam-cuadro), (0, anchopanta))
-            y3 = np.interp(y1, (cuadro, altocam-cuadro), (0, altopanta))
+            x3 = np.interp(x1, (0, anchocam), (0, anchopanta))
+            y3 = np.interp(y1, (0, altocam), (0, altopanta))
 
             # ------------------------------- Suavizado los valores ----------------------------------
             cubix = pubix + (x3 - pubix) / sua  # Ubicacion actual = ubi anterior + x3 - Pa dividida el valor suavizado
